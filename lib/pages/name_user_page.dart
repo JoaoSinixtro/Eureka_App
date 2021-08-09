@@ -20,6 +20,14 @@ class _NameScreenState extends State<NameScreen> {
             SizedBox(
               height: 30,
             ),
+            Text(
+              'Antes de começar, por favor, nos \ndiga seu nome.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.w400,
+                fontSize: 18,
+              ),
+            )
           ],
         ),
       ),
