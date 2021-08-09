@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 class NameScreen extends StatefulWidget {
   const NameScreen({Key? key}) : super(key: key);
 
+  String name = '';
+
   @override
   _NameScreenState createState() => _NameScreenState();
 }
