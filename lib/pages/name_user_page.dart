@@ -16,7 +16,10 @@ class _NameScreenState extends State<NameScreen> {
       body: Center(
         child: Column(
           children: [
-            WelcomeText().
+            WelcomeText(),
+            SizedBox(
+              height: 30,
+            ),
           ],
         ),
       ),
