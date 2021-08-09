@@ -1,3 +1,4 @@
+import 'package:eureka_app/components/welcome_text.dart';
 import 'package:flutter/material.dart';
 
 class NameScreen extends StatefulWidget {
@@ -10,6 +11,15 @@ class NameScreen extends StatefulWidget {
 class _NameScreenState extends State<NameScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      backgroundColor: Color(0xFF510087),
+      body: Center(
+        child: Column(
+          children: [
+            WelcomeText().
+          ],
+        ),
+      ),
+    );
   }
 }
