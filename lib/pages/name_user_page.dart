@@ -1,6 +1,5 @@
 import 'package:eureka_app/components/welcome_text.dart';
 import 'package:flutter/material.dart';
-import 'package:eureka_app/pages/pronoun_user_page.dart';
 
 class NameScreen extends StatefulWidget {
   @override
@@ -8,6 +7,7 @@ class NameScreen extends StatefulWidget {
 }
 
 class _NameScreenState extends State<NameScreen> {
+  final nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +20,7 @@ class _NameScreenState extends State<NameScreen> {
             SizedBox(height: 30),
             _descriptionText(),
             SizedBox(height: 50),
-            _inputName(),
+            _inputName(nameController),
             SizedBox(height: 50),
             _button(),
           ],
@@ -41,20 +41,20 @@ class _NameScreenState extends State<NameScreen> {
     );
   }
 
-  Widget _inputName() {
-    String name = '';
-
+  Widget _inputName(final nameController) {
     return Container(
-      height: 50,
+      height: 65,
       width: 235,
       child: TextField(
-        onChanged: (nameOfUser) {
-          name = nameOfUser;
-        },
+        maxLength: 16,
+        style: TextStyle(
+          color: Colors.black87,
+        ),
+        controller: nameController,
         decoration: InputDecoration(
           focusColor: Color(0xFFFFD500),
-          border: OutlineInputBorder(),
-          focusedBorder: OutlineInputBorder(),
+          border: OutlineInputBorder(borderSide: BorderSide.none),
+          focusedBorder: OutlineInputBorder(borderSide: BorderSide.none),
           labelText: 'Seu Nome',
           labelStyle: TextStyle(
             color: Colors.grey[600],
@@ -80,17 +80,14 @@ class _NameScreenState extends State<NameScreen> {
         height: 50,
         child: ElevatedButton(
           onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => PronounScreen(),
-              ),
-            );
+            Navigator.of(context).pushReplacementNamed('/home',
+                arguments: {"name": nameController.value.text});
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Próximo',
+                'Começar',
                 style: TextStyle(
                   color: Color(0xFF000000),
                   fontSize: 16,

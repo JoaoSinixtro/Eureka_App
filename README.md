@@ -1,4 +1,4 @@
-# eureka_app
+# Eureka
 
 A new Flutter project.
 

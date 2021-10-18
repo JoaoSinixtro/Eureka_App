@@ -10,6 +10,7 @@ class WelcomeText extends StatelessWidget {
         text: 'Olá, Seja Bem Vindo(a) \nà ',
         // textAlign: TextAlign.center,
         style: TextStyle(
+          color: Colors.white,
           fontSize: 25,
           fontWeight: FontWeight.w500,
         ),
